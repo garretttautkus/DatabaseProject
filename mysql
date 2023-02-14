@@ -1,8 +1,8 @@
 CREATE TABLE ORGANIZATION
 (
-  OName INT NOT NULL,
+  OName CHAR NOT NULL, //changing values
   OAddress INT NOT NULL,
-  OCity INT NOT NULL,
+  OCity CHAR NOT NULL,
   OState INT NOT NULL,
   OZip INT NOT NULL,
   OEmail INT NOT NULL,
