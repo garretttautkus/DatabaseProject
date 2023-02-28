@@ -4,7 +4,7 @@ INSERT INTO ORGANIZATION VALUES ("Pigeons United", "222 N 222 W", "Rexburg", "Id
 
 
 --Hotel 
-INSERT INTO HOTEL VALUES ("100", "Hilton Hotel Missoula", "Montana", 59901, "100 Madison St, Missoula, MT 59802", 4067283100, 200, "Missoula");
+INSERT INTO HOTEL VALUES (100, 'Hilton Hotel Missoula', 'Montana', 59901, '100 Madison St, Missoula, MT 59802', 4067283100, 4067283198, 200, 'Missoula');
 INSERT INTO HOTEL VALUES ("10000", "Hotel California", "California", 90001, "3832 Warbler St, Los Angeles, CA 90001", 3105432189, 500, "Los Angeles");
 
 
