@@ -12,10 +12,10 @@ INSERT INTO HOTEL (HMaxMeetSize, HName, HState, HZip, HAddress, HContactPhone, H
 INSERT INTO HOTEL (HMaxMeetSize, HName, HState, HZip, HAddress, HContactPhone, HPhone, HNumRooms, HCity) VALUES (7500, 'Treasure Island', 'Nevada', 64585, '789 Las Vegas Boulevard, Las Vegasm NV 64585', '8567898520', '8569747458' 8900, 'Las Vegas');
 
 --Conference
-INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('IPOAC Year in Review', '2023-02-28', '2023-02-29', 'Missoula', 25, 95, 2000, 'Hilton Hotel Missoula');
-INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('Uprising of the Avians', '2023-02-28', '2023-02-29', 'Los Angeles', 25, 95, 2000, 'Hotel California');
-INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('TED (Technology, Entertainment, Design) Conference', '2023-05-18', '2023-05-20', 'Las Vegas' 50, 5000, 20000, 'Treasure Island');
-INSERT INTO CONFERENCE (CName, CStartDatem CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('Global Innovation Summit', '2023-06-02', '2023-06-05', 'Tampa Bay', 15, 50, 1500, 'The Blue Chateau');
+INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('IPOAC Year in Review', '2023-02-14', '2023-02-15', 'Missoula', 25, 95, 2000, 'Hilton Hotel Missoula');
+INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('Uprising of the Avians', '2023-02-13', '2023-02-15', 'Los Angeles', 25, 95, 2000, 'Hotel California');
+INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('TED (Technology, Entertainment, Design) Conference', '2023-05-18', '2023-05-20', 'Las Vegas', 50, 5000, 20000, 'Treasure Island');
+INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('Global Innovation Summit', '2023-06-02', '2023-06-05', 'Tampa Bay', 15, 50, 1500, 'The Blue Chateau');
 
 --Attendee
 INSERT INTO ATTENDEE (AName, APhone, ADiscount, AEmail, AFeePaid, HName) VALUES ('Paul Bunyan', 649100200, 10, 'paul_bunyan@yahoo.com', 5, 'Hilton Hotel Missoula');
