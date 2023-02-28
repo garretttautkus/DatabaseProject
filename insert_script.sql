@@ -17,7 +17,7 @@ INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, C
 INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('TED (Technology, Entertainment, Design) Conference', '2023-05-18', '2023-05-20', 'Las Vegas', 50, 5000, 20000, 'Treasure Island');
 INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('Global Innovation Summit', '2023-06-02', '2023-06-05', 'Tampa Bay', 15, 50, 1500, 'The Blue Chateau');
 
---Attendee
+--Attendee issue with attendee won't insert because conference is skipping serial (1)
 INSERT INTO ATTENDEE (AName, APhone, ADiscount, AEmail, AFeePaid, HName) VALUES ('Paul Bunyan', 649100200, 10, 'paul_bunyan@yahoo.com', 5, 'Hilton Hotel Missoula');
 INSERT INTO ATTENDEE (AName, APhone, ADiscount, AEmail, AFeePaid, HName) VALUES ('Acanthis', 9991006542, 40, 'godofpigeons@pigeon.com', 0, 'Hotel California');
 INSERT INTO ATTENDEE (AName, APhone, ADiscount, AEmail, AFeePaid, HName) VALUES ('Cindy LouWho', 4568521590, 15, 'ilovechristmas@grinch.com', 15, 'The Blue Chateau');
