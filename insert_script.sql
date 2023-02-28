@@ -9,8 +9,8 @@ INSERT INTO HOTEL (HMaxMeetSize, HName, HState, HZip, HAddress, HContactPhone, H
 
 
 --Conference
-INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCIty, CFee, CAttendance, CBudget, HName) VALUES ('IPOAC Year in Review', '2023-02-28', '2023-02-29', 'Missoula', 25, 95, 2000, 'Hilton Hotel Missoula');
-INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCIty, CFee, CAttendance, CBudget, HName) VALUES ('Uprising of the Avians', '2023-02-28', '2023-02-29', 'Los Angeles', 25, 95, 2000, 'Hotel California');
+INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('IPOAC Year in Review', '2023-02-28', '2023-02-29', 'Missoula', 25, 95, 2000, 'Hilton Hotel Missoula');
+INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('Uprising of the Avians', '2023-02-28', '2023-02-29', 'Los Angeles', 25, 95, 2000, 'Hotel California');
 
 
 --Attendee
