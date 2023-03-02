@@ -3,7 +3,6 @@ INSERT INTO ORGANIZATION (OName, OAddress, OCity, OState, OZip, OEmail, OPhone) 
 INSERT INTO ORGANIZATION (OName, OAddress, OCity, OState, OZip, OEmail, OPhone) VALUES ('Pigeons United', '222 N 222 W', 'Rexburg', 'Idaho', 83646, 'we_are_pigeons66@gmail.com', '2082222222');
 INSERT INTO ORGANIZATION (OName, OAddress, OCity, OState, OZip, OEmail, OPhone) VALUES ('BlueJay Experts', '543 N 678 E', 'New York', 'New York', 56784, 'bluejayexp@hotmail.com', '8752584568');
 INSERT INTO ORGANIZATION (OName, OAddress, OCity, OState, OZip, OEmail, OPhone) VALUES ('Mockingjay Rockers', '45 Birders Ave', 'Birmingham', 'Alabama', 24452, 'mockingrockers@yahoo.com', '5475895552');
-INSERT INTO ORGANIZATION (OName, OAddress, OCity, OState, OZip, OEmail, OPhone) VALUES ('Seagull Seekers', '56 16th Street', 'Newport Beach', 'California', 95845, 'seagull_seekers@birdlover.com', '9498758665');
 
 --Hotel 
 INSERT INTO HOTEL (HMaxMeetSize, HName, HState, HZip, HAddress, HContactPhone, HPhone, HNumRooms, HCity) VALUES (100, 'Hilton Hotel Missoula', 'Montana', 59901, '100 Madison St, Missoula, MT 59802', '4067283100', '4067283198', 200, 'Missoula');
@@ -22,4 +21,3 @@ INSERT INTO ATTENDEE (AName, APhone, ADiscount, AEmail, AFeePaid, HName) VALUES 
 INSERT INTO ATTENDEE (AName, APhone, ADiscount, AEmail, AFeePaid, HName) VALUES ('Acanthis', 9991006542, 40, 'godofpigeons@pigeon.com', 0, 'Hotel California');
 INSERT INTO ATTENDEE (AName, APhone, ADiscount, AEmail, AFeePaid, HName) VALUES ('Cindy LouWho', 4568521590, 15, 'ilovechristmas@grinch.com', 15, 'The Blue Chateau');
 INSERT INTO ATTENDEE (AName, APhone, ADiscount, AEmail, AFeePaid, HName) VALUES ('Jack Black', 2354856258, 50, 'schoolofrock@rockers.com', 10, 'Treasure Island');
-INSERT INTO ATTENDEE (AName, APhone, ADiscount, AEmail, AFeePaid, HName) VALUES ('Will Smith', 7418529630, 10, 'freshprince@hollywood.com', 20, 'Hotel California');
