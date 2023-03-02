@@ -9,7 +9,7 @@ INSERT INTO ORGANIZATION (OName, OAddress, OCity, OState, OZip, OEmail, OPhone) 
 INSERT INTO HOTEL (HMaxMeetSize, HName, HState, HZip, HAddress, HContactPhone, HPhone, HNumRooms, HCity) VALUES (100, 'Hilton Hotel Missoula', 'Montana', 59901, '100 Madison St, Missoula, MT 59802', '4067283100', '4067283198', 200, 'Missoula');
 INSERT INTO HOTEL (HMaxMeetSize, HName, HState, HZip, HAddress, HContactPhone, HPhone, HNumRooms, HCity) VALUES (10000, 'Hotel California', 'California', 90001, '3832 Warbler St, Los Angeles, CA 90001', '4001002000', '3105432189', 500, 'Los Angeles');
 INSERT INTO HOTEL (HMaxMeetSize, HName, HState, HZip, HAddress, HContactPhone, HPhone, HNumRooms, HCity) VALUES (650, 'The Blue Chateau', 'Florida', 56825, '56 Seashell Drive, Tampa Bay, FL 56825', '8524567894', '1234567890', 147, 'Tampa Bay');
-INSERT INTO HOTEL (HMaxMeetSize, HName, HState, HZip, HAddress, HContactPhone, HPhone, HNumRooms, HCity) VALUES (7500, 'Treasure Island', 'Nevada', 64585, '789 Las Vegas Boulevard, Las Vegasm NV 64585', '8567898520', '8569747458' 8900, 'Las Vegas');
+INSERT INTO HOTEL (HMaxMeetSize, HName, HState, HZip, HAddress, HContactPhone, HPhone, HNumRooms, HCity) VALUES (7500, 'Treasure Island', 'Nevada', 64585, '789 Las Vegas Boulevard, Las Vegasm NV 64585', '8567898520', '8569747458', 8900, 'Las Vegas');
 
 --Conference
 INSERT INTO CONFERENCE (CName, CStartDate, CEndDate, CCity, CFee, CAttendance, CBudget, HName) VALUES ('IPOAC Year in Review', '2023-02-14', '2023-02-15', 'Missoula', 25, 95, 2000, 'Hilton Hotel Missoula');
