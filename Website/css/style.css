@@ -12,8 +12,8 @@ the corresponding fonts from Google Fonts. */
 to all elements unless they are overridden. */
 :root {
 	/* Change these variables according to your theme */
-	--primary: #b0bec5;
-	--accent: #b2dfdb;
+	--primary: #c72e0f;
+	--accent: #b53232;
 	--delete: #82ada9;
 	--primary-text: #ffffff;
 
@@ -39,15 +39,16 @@ h1 {
 }
 
 nav {
-    color: white;				/* Nav bar is white on very dark gray */
-    background-color: #808e95;
+    color: rgb(235, 185, 185);				/* Nav bar is white on very dark gray */
+    background-color: #af361b;
     padding: 0.75rem;			  /* Give the nav bar some internal padding */
 }
 
 nav a {
-    color: #e5ffff;
+    color: #fbd9d9;
 	font-weight: bolder;		/* Links in the nav bar are light blue instead of white */
-    text-decoration: none;		  /* Don't underline links in the nav bar */
+    text-decoration: none;
+    padding: 0.75rem;		  /* Don't underline links in the nav bar */
 }
 
 /* These with class selectors take effect when you apply the corresponding class name on an element */
@@ -57,85 +58,8 @@ nav a {
 	list-style-type: none;	/* No bullets in the list */
 }
 
-.task {
-	display: block;
-	width: 100%;
-	box-sizing: border-box;
-	border-color: #81aba8;
-	border: 2rem;
-}
-
-.task-done {
-	display: inline-block;
-	box-sizing: border-box;
-	color: #5ab398;
-	/* Add property to change checkbox icon color */
-}
-
-.task-description {
-	display: inline-block;
-	width: calc(100% - 12em);
-	box-sizing: border-box;
-}
-
-.task-date {
-	display: inline-block;
-	box-sizing: border-box;
-	text-align: right;
-	color: #81aba8;
-	float: right;
-}
-
-.task-delete {
-	display: inline-block;
-	box-sizing: border-box;
-	color: #8d1820;
-	/* Add property to change delete icon color */
-}
-
-.material-icon {
-	border:dotted; /* No border */
-	border-radius: 20px;			  /* Round the corners of the body section */
-    padding: 0.5rem;
-	background: none; /* Match the background of the parent */
-	font-family: 'Material Icons'; /* Use the icon font */
-	font-size: inherit; /* Input doesn't automatically inherit font size. This brings it in. */
-	cursor: pointer; /* Change the cursor to a pointer when hovering on this element */
-}
-
 /* Add your custom class rules here */
 .description-input{
 	width: 100%;
 	box-sizing: border-box;
-}
-
-.completed-task{
-	text-decoration: line-through;
-	color: #808e95;
-
-}
-
-.example {
-	color: var(--primary-text);
-}
-
-/* Add rule for: */
-.create-task {
-	background-color: #b1ddd9;
-	font-family:monospace;
-	font-style: oblique;
-	color: #303030;
-	border-radius: 5em;
-	cursor: pointer;
-
-}
-
-/* ===== checkbox-icon =============== */
-/* These three rules apply the checkbox icon from the Material Icons font to a checkbox */
-
-input.checkbox-icon {
-	font-family: 'Material Icons';
-    font-size: inherit;  /* Input doesn't automatically inherit font size. This brings it in. */
-	appearance: none;    /* Hide the existing checkbox so that the new rendering will overlay it */
-	cursor: pointer;     /* Change the cursor to a pointer when hovering on this element */
 }
