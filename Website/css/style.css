@@ -18,6 +18,14 @@ p {
   letter-spacing: 5px;
 }
 
+h2 {
+  font-size: 1.8em;
+  padding: 10px 0;
+  margin: 0;
+  font-weight: 400;
+  font-family: 'Lato';
+}
+
 .header {
   width: 100%;
   padding:60px 0;
@@ -43,13 +51,6 @@ p {
   color:#b95353;
 }
 
-.bannerimage {
-    width: 100%;
-    background-image: url(images/MeetingMakersBanner.gif);
-    height: 405px;
-    background-color: purple;
-    background-position: center;
-  }
 
 /* The root rule is the foundation for the whole page. These settings _cascade_
 to all elements unless they are overridden. */
@@ -61,7 +62,6 @@ to all elements unless they are overridden. */
 	--primary-text: #ffffff;
 
 	/* Window background and default font */
-    background-image: url(background.jpeg) ;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
