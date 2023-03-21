@@ -6,5 +6,5 @@ WHERE OEmail = (
 );
 
 CREATE VIEW meeting_information AS
-SELECT CName, CAttendance, HName, HState, HCity, HZip, HAddress
-FROM Conference, Hotel
+SELECT Oname, CName, CAttendance, HName, HState, HCity, HZip, HAddress
+FROM Organization, Conference, Hotel
