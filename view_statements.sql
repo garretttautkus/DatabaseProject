@@ -6,5 +6,8 @@ WHERE OEmail = (
 );
 
 CREATE VIEW meeting_information AS
-SELECT Oname, CName, CAttendance, HName, HState, HCity, HZip, HAddress
+SELECT CName, CAttendance, CStartDate, CEndDate, HName, HState, HCity, HZip, HAddress
 FROM Organization, Conference, Hotel
+WHERE OEmail = (
+    SELECT LoggedInOrgEmail FROM Sessions WHERE SessionID = :session_id
+);
