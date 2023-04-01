@@ -20,7 +20,7 @@ function App() {
             <Route path="/" element={<Todos/>} />
             <Route path="/surprise" element={<Surprise/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/home" element={<Home/>} />
+            <Route path="/userHome" element={<Home/>} />
             <Route path="/form" element={<Form/>} />
           </Routes>
         </BrowserRouter>

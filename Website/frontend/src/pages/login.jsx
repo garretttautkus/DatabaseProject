@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from '../components/Navbar';
 
 const Login = () => {
       return (
@@ -29,6 +30,7 @@ const Login = () => {
             <a href="userHome.html">User Home Page </a>
             <a href="eventinput.html"> Create an event</a>
           </nav>
+          <Navbar />
           <link rel="stylesheet" href="css/style.css" />
           <div className="container">
             <form action="action_page.php">

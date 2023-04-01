@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from '../components/Navbar';
 
 const Form = () => {
     return (
@@ -24,10 +25,10 @@ const Form = () => {
                 Learn how to configure a non-root public URL by running `npm run build`.
               */}
                   <title>Meeting Makers</title>
+                  <Navbar />
                   <nav> 
-                    <a href="index.html"> Home Page</a>
-                    <a href="userHome.html">User Home Page </a>
-                    <a href="loginpage.html"> Login</a>
+                    <a href="userHome.jsx">User Home Page </a>
+                    <a href="login.jsx"> Login</a>
                   </nav>
                   <link rel="stylesheet" href="css/style.css" />
                   <div className="container">

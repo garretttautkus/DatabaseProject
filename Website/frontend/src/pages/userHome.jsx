@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <title>Meeting Makers</title>
+
         <nav> 
           <a href="index.html"> Home Page</a>
           <a href="loginpage.html">Login </a>
@@ -19,7 +21,7 @@ const Home = () => {
         </nav>
         <link rel="stylesheet" href="css/style.css" />
       </head>
-
+      <Navbar />
       <body>
         <section className="header">
           <h1>My Events</h1>
