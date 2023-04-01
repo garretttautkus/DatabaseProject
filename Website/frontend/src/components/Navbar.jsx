@@ -22,7 +22,7 @@ const Navbar = () => {
     <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1rem" bg="red.500" color="white">
       <Flex align="center" mr={5}>
         <Heading as="h1" size="lg" letterSpacing={'-.1rem'}>
-          Todo List
+          Meeting Maker
         </Heading>
       </Flex>
 
@@ -52,7 +52,6 @@ const Navbar = () => {
             Menu
           </MenuButton>
           <MenuList bg="blackAlpha.500">
-            <MenuItem bg="blackAlpha.500"><Link to="/">My Todo List</Link></MenuItem>
             <MenuItem bg="blackAlpha.500"><Link to="/form">Create an Event</Link></MenuItem>
             <MenuItem bg="blackAlpha.500"><Link to="/login">Login Page</Link></MenuItem>
             <MenuItem bg="blackAlpha.500"><Link to="/userHome">User Home Page</Link></MenuItem>
