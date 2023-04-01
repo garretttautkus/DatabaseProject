@@ -17,11 +17,12 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Todos/>} />
+            <Route path="/" element={<Login/>} />
             <Route path="/surprise" element={<Surprise/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/userHome" element={<Home/>} />
             <Route path="/form" element={<Form/>} />
+            <Route path="/todos" element={<Todos/>} />
           </Routes>
         </BrowserRouter>
       </div>

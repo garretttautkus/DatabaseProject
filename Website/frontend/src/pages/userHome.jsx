@@ -24,12 +24,12 @@ const Home = () => {
 
         <section className="container">
           <h2>Uprising of the Avians</h2>
-          <p>Hotel California, Los Angeles CA 2023-02-13 to 2023-02-15</p>
+          <p2>Hotel California, Los Angeles CA 2023-02-13 to 2023-02-15</p2>
         </section>
 
         <section className="container">
           <h2>Global Innovation Summit</h2>
-          <p>The Blue Chateau, Tampa Bay FL 2023-06-02 to 2023-06-05</p>
+          <p2>The Blue Chateau, Tampa Bay FL 2023-06-02 to 2023-06-05</p2>
         </section>
       </body>
     </html>
