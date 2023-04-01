@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MyComponent() {
+const Home = () => {
   return (
     <html lang="en">
       <head>
@@ -39,3 +39,4 @@ function MyComponent() {
     </html>
   );
 }
+export default Home; 
