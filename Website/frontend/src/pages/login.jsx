@@ -34,7 +34,7 @@ const Login = () => {
               <input type="text" id="uname" name="uname" placeholder="Email" />
               <label htmlFor="password">Password</label>
               <input type="text" id="password" name="password" placeholder="Password" />
-              <input type="submit" defaultValue="Submit" />
+              <input type="submit" value="Login" />
             </form>
           </div>  
         </div>
