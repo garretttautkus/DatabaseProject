@@ -19,7 +19,7 @@ const Navbar = () => {
   const toggle = () => setIsOpen(!isOpen); //function to toggle the menu
 
   return (
-    <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1rem" bg="blue.500" color="white">
+    <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1rem" bg="red.500" color="white">
       <Flex align="center" mr={5}>
         <Heading as="h1" size="lg" letterSpacing={'-.1rem'}>
           Todo List

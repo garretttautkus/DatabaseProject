@@ -24,27 +24,12 @@ const Form = () => {
                 work correctly both with client-side routing and a non-root public URL.
                 Learn how to configure a non-root public URL by running `npm run build`.
               */}
-<<<<<<< HEAD
-                  <title>Meeting Makers</title>
-                  <Navbar />
-                  <nav> 
-                    <a href="userHome.jsx">User Home Page </a>
-                    <a href="login.jsx"> Login</a>
-                  </nav>
-                  <link rel="stylesheet" href="css/style.css" />
-                  <div className="container">
-                    <form action="action_page.php">
-=======
             <title>Meeting Makers</title>
-            <nav> 
-                <a href="index.html"> Home Page</a>
-                <a href="userHome.html">User Home Page </a>
-                <a href="loginpage.html"> Login</a>
-            </nav>
+            <Navbar />
+
             <link rel="stylesheet" href="css/style.css" />
             <div className="container">
             <form action="action_page.php">
->>>>>>> df65add53ea65674356f61e316771f321066e8dd
                       {/* Organization inputs*/}
                 <label htmlFor="oname">Company Name</label>
                 <input type="text" id="oname" name="oname" placeholder="Company name" />

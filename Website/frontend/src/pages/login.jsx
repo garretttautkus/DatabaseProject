@@ -25,11 +25,6 @@ const Login = () => {
         Learn how to configure a non-root public URL by running `npm run build`.
       */}
           <title>Meeting Makers</title>
-          <nav> 
-            <a href="index.html"> Home Page</a>
-            <a href="userHome.html">User Home Page </a>
-            <a href="eventinput.html"> Create an event</a>
-          </nav>
           <Navbar />
           <link rel="stylesheet" href="css/style.css" />
           <div className="container">

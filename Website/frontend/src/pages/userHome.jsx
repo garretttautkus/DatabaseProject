@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 const Home = () => {
   return (
     <html lang="en">
-      <head>
+      <div>
         <meta charSet="utf-8" />
         <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,14 +13,8 @@ const Home = () => {
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <title>Meeting Makers</title>
-
-        <nav> 
-          <a href="index.html"> Home Page</a>
-          <a href="loginpage.html">Login </a>
-          <a href="eventinput.html"> Create an event</a>
-        </nav>
         <link rel="stylesheet" href="css/style.css" />
-      </head>
+      </div>
       <Navbar />
       <body>
         <section className="header">
