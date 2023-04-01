@@ -6,9 +6,9 @@ const app = express()
 
 const db = mysql.createConnection({
     host: "127.0.0.1", //the host for you database
-    user: "root", //the username for your database
-    password: "root", //the password for your database
-    database: "Todo" //the name of your database (database itself, not the schema)
+    user: "postgres", //the username for your database
+    password: "patchwork1029!", //the password for your database
+    database: "Meeting Makers" //the name of your database (database itself, not the schema)
 })
 
 //dependencies
