@@ -6,8 +6,8 @@ const app = express()
 
 const db = mysql.createConnection({
     host: "127.0.0.1", //the host for you database
-    user: "postgres", //the username for your database
-    password: "patchwork1029!", //the password for your database
+    user: "root", //the username for your database
+    password: "root", //the password for your database
     database: "Meeting Makers" //the name of your database (database itself, not the schema)
 })
 
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 //EXAMPLE OF GET REQUEST
 app.get("/todos", (req, res) => {
-    const query = "SELECT * FROM items"
+    const query = "SELECT * FROM conferences"
     db.query(query, (err, result) => {
         if (err) {
             console.log(err)
@@ -34,7 +34,7 @@ app.get("/todos", (req, res) => {
 
 //EXAMPLE OF POST REQUEST
 app.post("/todos", (req, res) => {
-    const query = "INSERT INTO items (itemName, isCompleted) VALUES (?, false)"
+    const query = "INSERT INTO conferences (cname, cstartdate, cenddate, ccity, cfee, cattendance, cbudget, hname) VALUES ('IPOAC Year in Review', '2023-02-14', '2023-02-15', 'Missoula', 25, 95, 2000, 'Hilton Hotel Missoula')"
 
     const VALUES = [
         req.body.itemName
@@ -52,7 +52,7 @@ app.post("/todos", (req, res) => {
 //EXAMPLE OF DELETE REQUEST
 app.delete("/todos/delete/:id", (req, res) => {
     const itemID = req.params.id;
-    const query = "DELETE FROM items WHERE itemID = ?"
+    const query = "DELETE FROM conference WHERE itemID = ?"
 
     db.query(query, [itemID], (err, result) => {
         if (err) {
