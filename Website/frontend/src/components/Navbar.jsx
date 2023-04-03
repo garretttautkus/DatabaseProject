@@ -22,7 +22,7 @@ const Navbar = () => {
     <Flex as="nav" align="center" justify="space-between" wrap="wrap" padding="1rem" bg="red.500" color="white">
       <Flex align="center" mr={5}>
         <Heading as="h1" size="lg" letterSpacing={'-.1rem'}>
-          Meeting Maker
+          Meeting Makers
         </Heading>
       </Flex>
 
