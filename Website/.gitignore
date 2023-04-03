@@ -1,4 +1,4 @@
 node_modules
-.DS_Store
-package-lock.json
-package.json
+*.DS_Store
+*.json
+/backend/index.js
