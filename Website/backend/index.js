@@ -27,9 +27,9 @@ app.get("/", (req, res) => {
 })
 
 //EXAMPLE OF GET REQUEST
-app.get("/todos", (req, res) => {
-    const query = "SELECT * FROM conference"
-    client.query(query, (err, result) => {
+app.get("/userHome", (req, res) => {
+    const query = "SELECT * FROM conferences"
+    db.query(query, (err, result) => {
         if (err) {
             console.log(err)
         } else {
@@ -56,7 +56,7 @@ app.post("/form", (req, res) => {
 })
 
 //EXAMPLE OF DELETE REQUEST
-app.delete("/todos/delete/:id", (req, res) => {
+app.delete("/userHome/:id", (req, res) => {
     const itemID = req.params.id;
     const query = "DELETE FROM conference WHERE itemID = $1"
 

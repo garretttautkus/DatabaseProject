@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from '../components/Navbar';
+//import '../style.css';
 
 const Login = () => {
       return (
@@ -30,11 +31,11 @@ const Login = () => {
           <div className="container">
             <form action="action_page.php">
               {/* Organization inputs*/}
-              <label class=".formatty"htmlFor="uname">Username</label>
+              <label class=".formatty" htmlFor="uname">Username</label>
               <input type="text" id="uname" name="uname" placeholder="Email" />
               <label htmlFor="password">Password</label>
               <input type="text" id="password" name="password" placeholder="Password" />
-              <input type="submit" defaultValue="Submit" />
+              <input type="submit" value="Login" />
             </form>
           </div>  
         </div>
