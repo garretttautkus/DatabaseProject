@@ -39,11 +39,19 @@ app.get("/userHome", (req, res) => {
 })
 
 //EXAMPLE OF POST REQUEST
-app.post("/form", (req, res) => {
-    const query = "INSERT INTO conference (cname, cstartdate, cenddate, ccity, cfee, cattendance, cbudget, hname) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)"
+app.post("/api/form", (req, res) => {
+    const query = "INSERT INTO conference (cname, cstartdate, cenddate, ccity, cfee, cattendance, cbudget, hname, oid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)"
 
     const VALUES = [
-        req.body.itemNamed
+        req.body.cname,
+        req.body.cstartdate,
+        req.body.cenddate,
+        req.body.ccity,
+        req.body.cfee,
+        req.body.cattendance,
+        req.body.cbudget,
+        req.body.hname,
+        req.body.oid
     ]
 
     client.query(query, VALUES, (err, result) => {
