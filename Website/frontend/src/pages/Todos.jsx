@@ -20,7 +20,7 @@ const Todos = () => {
     useEffect(() => {
         const getTodos = async () => {
             try{
-                const res =await axios.get("http://localhost:8080/todos") //this is the backend endpoint
+                const res =await axios.get("http://localhost:3000/todos") //this is the backend endpoint
                     setTodos(res.data); //set the state to the data returned from the backend
             }
             catch(err){
@@ -38,7 +38,7 @@ const Todos = () => {
 
     const handleClick = async (e) => {
         try {
-            const res = await axios.post("http://localhost:8080/todos", newTodo); //this is the backend endpoint
+            const res = await axios.post("http://localhost:3000/todos", newTodo); //this is the backend endpoint
             setTodos(prevTodos => [...prevTodos, res.data]); //add the new todo to the list of todos
             setNewTodo({ itemName: "" }); // reset the form
         } catch(err) {
