@@ -55,6 +55,7 @@ const Navbar = () => {
             <MenuItem bg="blackAlpha.500"><Link to="/form">Create an Event</Link></MenuItem>
             <MenuItem bg="blackAlpha.500"><Link to="/login">Login Page</Link></MenuItem>
             <MenuItem bg="blackAlpha.500"><Link to="/userHome">User Home Page</Link></MenuItem>
+            <MenuItem bg="blackAlpha.500"><Link to="/hotel">Hotel</Link></MenuItem>
             <MenuDivider />
             <MenuItem bg="blackAlpha.500"><Link to="/login">Fake Logout</Link></MenuItem>
           </MenuList>

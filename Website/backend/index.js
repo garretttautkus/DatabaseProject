@@ -9,7 +9,7 @@ const client = new Client.Client({
   user: 'postgres',
   host: '127.0.0.1',
   database: 'Project1',
-  password: 'password',
+  password: 'jean',
   port: 5432,
 })
 client.connect(function(err) {

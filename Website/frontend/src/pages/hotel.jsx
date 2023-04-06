@@ -4,31 +4,29 @@ import { useState } from "react";
 import axios from 'axios';
 
 
-const Form = () => {
-  const [newForm, setNewForm] = useState({
-    cname : "",
-    cstartdate : "2024-01-01",
-    cenddate : "2024-01-02",
-    ccity : "",
-    cfee : "",
-    cattendance : "",
-    cbudget : "50000.00",
-    hname : "Hotel California",
-    oid: "1"
+const Hotel = () => {
+  const [hotelForm, setNewForm] = useState({
+    Hname : "",
+    HMaxMeetSize : "",
+    HState : "",
+    HZip : "",
+    HAddress : "",
+    HContactPhone : "",
+    HPhone : "",
+    HCity : "",
   });
   const handleSubmit = async (e) => {
     try {
-        await axios.post("http://localhost:8080/api/form", newForm); //this is the backend endpoint
+        await axios.post("http://localhost:8080/api/hotel", hotelForm); //this is the backend endpoint
         setNewForm({ 
-          cname : "",
-          cstartdate : "2024-01-01",
-          cenddate : "2024-01-02",
-          ccity : "",
-          cfee : "",
-          cattendance : "",
-          cbudget : "50000.00",
-          hname : "Hotel California",
-          oid: "1"
+            Hname : "",
+            HMaxMeetSize : "",
+            HState : "",
+            HZip : "",
+            HAddress : "",
+            HContactPhone : "",
+            HPhone : "",
+            HCity : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -83,10 +81,10 @@ const Form = () => {
                 <label htmlFor="ophone">Phone</label>
                 <input type="text" id="ophone" name="ophone" placeholder="Contact Phone number" onChange={handleChange} /> */}
                       {/* Conference inputs*/}
-                <label htmlFor="cname">Conference Name</label>
-                <input type="text" id="cname" name="cname" placeholder="Conference name" onChange={handleChange} />
-                <label htmlFor="cstart">Conference Start Date</label>
-                <input type="date" id="cstart" name="cstart" placeholder="Start Date" format="yyyy-MM-dd" onChange={handleChange} />
+                <label htmlFor="Hname">Hotel Name</label>
+                <input type="text" id="Hname" name="Hname" placeholder="Hotel name" onChange={handleChange} />
+                <label htmlFor="HMaxMeetSize">Hotel Max Meeting Size</label>
+                <input type="text" id="HName" name="HMaxMeetSize" placeholder="Hotel Max Meeting Size" onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor="cend">Conference End Date</label>
@@ -119,6 +117,4 @@ const Form = () => {
     );
 }
 
-export default Form; 
-
-
+export default Hotel;
