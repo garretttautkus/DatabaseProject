@@ -87,25 +87,22 @@ const Hotel = () => {
                 <input type="text" id="HName" name="HMaxMeetSize" placeholder="Hotel Max Meeting Size" onChange={handleChange} />
                 <br />
                 <br />
-                <label htmlFor="cend">Conference End Date</label>
-                <input type="date" id="cend" name="cend" placeholder="End Date" format="yyyy-MM-dd" onChange={handleChange} />
+                <label htmlFor="HState">Hotel State</label>
+                <input type="text" id="HName" name="HState" placeholder="Hotel State"  onChange={handleChange} />
                 <br />
                 <br />
-                <label htmlFor="ccity">Conference EARTH</label>
-                <input type="text" id="ccity" name="ccity" placeholder="Conference City" onChange={handleChange} />
-                <label htmlFor="cfee">Fee</label>
-                <input type="text" id="cfee" name="cfee" placeholder="Conference Attendance Fee" onChange={handleChange} />
-                <label htmlFor="cattendance">Conference Attendance</label>
-                <input type="text" id="cattendance" name="cattendance" placeholder="Estimated Conference Attendance" onChange={handleChange} />
-                <label htmlFor="budget">Budget</label>
-                <select id="budget" name="budget">
-                <option value="50,000">under $50,000</option>
-                <option value="75,000">$50,000 - $75,000</option>
-                <option value="100,000">$75,000 - $100,000</option>
-                <option value="125,000">$100,000 - $125,000</option>
-                <option value="150,000">$125,000 - $150,000</option>
-                <option value="150,000+">Above $150,000</option>
-                </select>
+                <label htmlFor="HCity">Hotel City</label>
+                <input type="text" id="HName" name="HCity" placeholder="Hotel City" onChange={handleChange} />
+                <label htmlFor="HAddress">Hotel Address</label>
+                <input type="text" id="HName" name="HAddress" placeholder="Hotel Address" onChange={handleChange} />
+                <label htmlFor="HZip">Hotel Zip Code</label>
+                <input type="text" id="HName" name="HZip" placeholder="Hotel Zip Code" onChange={handleChange} />
+                <label htmlFor="HNumRooms">Hotel Number of Rooms</label>
+                <input type="number" id="HName" name="HNumRooms" placeholder="Hotel Number of Rooms" onChange={handleChange} />
+                <label htmlFor="HPhone">Hotel Phone Number</label>
+                <input type="text" id="HName" name="HPhone" placeholder="Hotel Phone" onChange={handleChange} />
+                <label htmlFor="HContactPhone">Hotel Representative Contact Phone</label>
+                <input type="text" id="HName" name="HContactPhone" placeholder="Hotel Contact Phone" onChange={handleChange} />
                       {/* Not sure how to do attendees - do we need to? */}
                       {/* Didn't include hotel - do we need to? */}
                 {/* <label htmlFor="subject">Extra Info</label>
