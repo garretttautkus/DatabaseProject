@@ -82,7 +82,7 @@ const Form = () => {
                 <input type="date" id="cenddate" name="cenddate" placeholder="End Date" format="yyyy-mm-dd" onChange={handleChange} />
                 <br />
                 <br />
-                <label htmlFor="ccity">Conference City</label>
+                <label htmlFor="ccity">Conference EARTH</label>
                 <input type="text" id="ccity" name="ccity" placeholder="Conference City" onChange={handleChange} />
                 <label htmlFor="cfee">Fee</label>
                 <input type="text" id="cfee" name="cfee" placeholder="Conference Attendance Fee" onChange={handleChange} />
