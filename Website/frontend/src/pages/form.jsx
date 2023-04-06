@@ -112,7 +112,7 @@ const Form = () => {
                       {/* Didn't include hotel - do we need to? */}
                 {/* <label htmlFor="subject">Extra Info</label>
                 <textarea id="subject" name="subject" placeholder="Anything else we need to know.." style={{height: '200px'}} defaultValue={""} /> */}
-                <button type="submit">Submit</button>
+                <button type="submit">Submit</button>        
             </form>
           </div>
         </div>
