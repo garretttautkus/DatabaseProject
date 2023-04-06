@@ -2,4 +2,7 @@ node_modules
 *node_modules*
 *.DS_Store
 *.json
+/backend/index.jsnode_modules
+*.DS_Store
+*.json
 /backend/index.js

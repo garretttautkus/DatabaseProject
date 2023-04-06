@@ -32,11 +32,12 @@ const Login = () => {
           <div className="container">
             <form>
               {/* Organization inputs*/}
-              <label class=".formatty" htmlFor="uname">Username</label>
+              <label class=".formatty" htmlFor="uname">Organization Name</label>
               <input type="text" id="uname" name="uname" placeholder="Email" />
               <label htmlFor="password">Password</label>
               <input type="password" id="password" name="password" placeholder="Password" />
               <Link to="/userHome"><input type="submit" value="Login" /></Link>
+              <Link to="/register"><input type="submit" value="Register" /></Link>
             </form>
           </div>  
         </div>

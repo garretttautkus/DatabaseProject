@@ -28,7 +28,7 @@ const Navbar = () => {
 
       <Box display={{ base: 'block', md: 'none' }} onClick={toggle}>
         <svg
-          fill="white"
+          fill="red"
           width="12px"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
