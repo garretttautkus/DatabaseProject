@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from '../components/Navbar';
 import { useState } from "react";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const Form = () => {
@@ -86,11 +87,11 @@ const Form = () => {
                 <label htmlFor="cname">Conference Name</label>
                 <input type="text" id="cname" name="cname" placeholder="Conference name" onChange={handleChange} />
                 <label htmlFor="cstart">Conference Start Date</label>
-                <input type="date" id="cstart" name="cstart" placeholder="Start Date" format="yyyy-MM-dd" onChange={handleChange} />
+                <input type="date" id="cstart" name="cstart" placeholder="Start Date" format="yyyy-mm-dd" onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor="cend">Conference End Date</label>
-                <input type="date" id="cend" name="cend" placeholder="End Date" format="yyyy-MM-dd" onChange={handleChange} />
+                <input type="date" id="cend" name="cend" placeholder="End Date" format="yyyy-mm-dd" onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor="ccity">Conference City</label>
@@ -112,7 +113,7 @@ const Form = () => {
                       {/* Didn't include hotel - do we need to? */}
                 {/* <label htmlFor="subject">Extra Info</label>
                 <textarea id="subject" name="subject" placeholder="Anything else we need to know.." style={{height: '200px'}} defaultValue={""} /> */}
-                <button type="submit">Submit</button>
+                <input type="submit" value="Submit" />
             </form>
           </div>
         </div>
