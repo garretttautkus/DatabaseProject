@@ -10,7 +10,7 @@ const client = new Client.Client({
   user: 'postgres',
   host: '127.0.0.1',
   database: 'Project1',
-  password: 'patchwork1029!', // this is the password to get into your postgresql, not the server
+  password: 'password', // this is the password to get into your postgresql, not the server
   port: 5432,
 })
 client.connect(function(err) {
