@@ -2,7 +2,6 @@ import express from "express"
 import mysql from "mysql"
 import cors from "cors"
 import Client from "pg"
-import dayjs from 'dayjs'
 const app = express()
 
 
@@ -10,7 +9,7 @@ const client = new Client.Client({
   user: 'postgres',
   host: '127.0.0.1',
   database: 'Project1',
-  password: 'password', // this is the password to get into your postgresql, not the server
+  password: 'jean', // this is the password to get into your postgresql, not the server
   port: 5432,
 })
 client.connect(function(err) {
@@ -74,6 +73,29 @@ app.post("/api/register", (req, res) => {
         req.body.oemail, 
         req.body.ophone, 
         req.body.oid 
+    ]
+
+    client.query(query, VALUES, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+    })
+})
+
+app.post("/api/hotel", (req, res) => {
+    const query = "INSERT INTO hotel (HMaxMeetSize, HName, HState, hzip, haddress, hcontactphone, HPhone, HNumRooms, HCity) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)"
+      const VALUES = [
+        req.body.HMaxMeetSize, 
+        req.body.HName,
+        req.body.HState,
+        req.body.HZip,
+        req.body.HAddress, 
+        req.body.HContactPhone, 
+        req.body.HPhone, 
+        req.body.HNumRooms,
+        req.body.HCity 
     ]
 
     client.query(query, VALUES, (err, result) => {
