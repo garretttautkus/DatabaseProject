@@ -7,8 +7,8 @@ import axios from 'axios';
 const Form = () => {
   const [newForm, setNewForm] = useState({
     cname : "",
-    cstartdate : "2024-01-01",
-    cenddate : "2024-01-02",
+    cstartdate : "",
+    cenddate : "",
     ccity : "",
     cfee : "",
     cattendance : "",
@@ -17,12 +17,13 @@ const Form = () => {
     oid: "1"
   });
   const handleSubmit = async (e) => {
+    
     try {
         await axios.post("http://localhost:8080/api/form", newForm); //this is the backend endpoint
         setNewForm({ 
           cname : "",
-          cstartdate : "2024-01-01",
-          cenddate : "2024-01-02",
+          cstartdate : "",
+          cenddate : "",
           ccity : "",
           cfee : "",
           cattendance : "",
@@ -86,11 +87,11 @@ const Form = () => {
                 <label htmlFor="cname">Conference Name</label>
                 <input type="text" id="cname" name="cname" placeholder="Conference name" onChange={handleChange} />
                 <label htmlFor="cstart">Conference Start Date</label>
-                <input type="date" id="cstart" name="cstart" placeholder="Start Date" format="yyyy-MM-dd" onChange={handleChange} />
+                <input type="date" id="cstartdate" name="cstartdate" placeholder="Start Date" format="yyyy-MM-dd" onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor="cend">Conference End Date</label>
-                <input type="date" id="cend" name="cend" placeholder="End Date" format="yyyy-MM-dd" onChange={handleChange} />
+                <input type="date" id="cenddate" name="cenddate" placeholder="End Date" format="yyyy-MM-dd" onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor="ccity">Conference City</label>
