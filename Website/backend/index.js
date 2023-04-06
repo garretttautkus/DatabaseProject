@@ -1,15 +1,21 @@
 import express from "express"
 import mysql from "mysql"
 import cors from "cors"
+import Client from "pg"
 
 const app = express()
 
-const db = mysql.createConnection({
-    host: "127.0.0.1", //the host for you database
-    user: "root", //the username for your database
-    password: "root", //the password for your database
-    database: "Meeting Makers" //the name of your database (database itself, not the schema)
+const client = new Client.Client({
+  user: 'postgres',
+  host: '127.0.0.1',
+  database: 'Project1',
+  password: 'password',
+  port: 5432,
 })
+client.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
 
 //dependencies
 app.use(express.json())
@@ -21,7 +27,7 @@ app.get("/", (req, res) => {
 })
 
 //EXAMPLE OF GET REQUEST
-app.get("/todos", (req, res) => {
+app.get("/userHome", (req, res) => {
     const query = "SELECT * FROM conferences"
     db.query(query, (err, result) => {
         if (err) {
@@ -33,14 +39,22 @@ app.get("/todos", (req, res) => {
 })
 
 //EXAMPLE OF POST REQUEST
-app.post("/todos", (req, res) => {
-    const query = "INSERT INTO conferences (cname, cstartdate, cenddate, ccity, cfee, cattendance, cbudget, hname) VALUES ('IPOAC Year in Review', '2023-02-14', '2023-02-15', 'Missoula', 25, 95, 2000, 'Hilton Hotel Missoula')"
+app.post("/api/form", (req, res) => {
+    const query = "INSERT INTO conference (cname, cstartdate, cenddate, ccity, cfee, cattendance, cbudget, hname, oid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)"
 
     const VALUES = [
-        req.body.itemName
+        req.body.cname,
+        req.body.cstartdate,
+        req.body.cenddate,
+        req.body.ccity,
+        req.body.cfee,
+        req.body.cattendance,
+        req.body.cbudget,
+        req.body.hname,
+        req.body.oid
     ]
 
-    db.query(query, [VALUES], (err, result) => {
+    client.query(query, VALUES, (err, result) => {
         if (err) {
             console.log(err)
         } else {
@@ -50,11 +64,11 @@ app.post("/todos", (req, res) => {
 })
 
 //EXAMPLE OF DELETE REQUEST
-app.delete("/todos/delete/:id", (req, res) => {
+app.delete("/userHome/:id", (req, res) => {
     const itemID = req.params.id;
-    const query = "DELETE FROM conference WHERE itemID = ?"
+    const query = "DELETE FROM conference WHERE itemID = $1"
 
-    db.query(query, [itemID], (err, result) => {
+    client.query(query, [itemID], (err, result) => {
         if (err) {
             console.log(err)
         } else {
@@ -66,9 +80,9 @@ app.delete("/todos/delete/:id", (req, res) => {
 //EXAMPLE OF PUT REQUEST
 app.put("/todos/update/:id", (req, res) => {
     const itemID = req.params.id;
-    const query = "UPDATE items SET isCompleted = NOT isCompleted WHERE itemID = ?";
+    const query = "UPDATE items SET isCompleted = NOT isCompleted WHERE itemID = $1";
 
-    db.query(query, [itemID], (err, result) => {
+    client.query(query, [itemID], (err, result) => {
         if (err) {
             console.log(err)
         } else {

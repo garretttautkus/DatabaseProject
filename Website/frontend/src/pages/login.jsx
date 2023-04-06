@@ -1,5 +1,7 @@
 import React from "react";
 import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
+//import '../style.css';
 
 const Login = () => {
       return (
@@ -28,13 +30,13 @@ const Login = () => {
           <Navbar />
           <link rel="stylesheet" href="css/style.css" />
           <div className="container">
-            <form action="action_page.php">
+            <form>
               {/* Organization inputs*/}
-              <label class=".formatty"htmlFor="uname">Username</label>
+              <label class=".formatty" htmlFor="uname">Username</label>
               <input type="text" id="uname" name="uname" placeholder="Email" />
               <label htmlFor="password">Password</label>
-              <input type="text" id="password" name="password" placeholder="Password" />
-              <input type="submit" value="Login" />
+              <input type="password" id="password" name="password" placeholder="Password" />
+              <Link to="/userHome"><input type="submit" value="Login" /></Link>
             </form>
           </div>  
         </div>

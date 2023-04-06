@@ -10,7 +10,7 @@ const TodoItem = ({ todo, onDelete }) => {
   //Deals with the delete axios call once the delete button is clicked
   const handleDelete = async (id) => {
     try {
-      await axios.delete("http://localhost:8080/todos/delete/" + id); //axios call to the backend
+      await axios.delete("http://localhost:3000/todos/delete/" + id); //axios call to the backend
       window.location.reload(); //reloads the page
     }
     catch (err) {
@@ -21,7 +21,7 @@ const TodoItem = ({ todo, onDelete }) => {
   //Deals with the update axios call once the checkbox is clicked
   const handleUpdate = async (id) => {
     try {
-      await axios.put("http://localhost:8080/todos/update/" + id); //axios call to the backend
+      await axios.put("http://localhost:3000/todos/update/" + id); //axios call to the backend
       window.location.reload(); //reloads the page
     }
     catch (err) {
