@@ -98,6 +98,29 @@ app.post("/api/register", (req, res) => {
     })
 })
 
+app.post("/api/hotel", (req, res) => {
+    const query = "INSERT INTO hotel (HMaxMeetSize, HName, HState, hzip, haddress, hcontactphone, HPhone, HNumRooms, HCity) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)"
+      const VALUES = [
+        req.body.HMaxMeetSize, 
+        req.body.HName,
+        req.body.HState,
+        req.body.HZip,
+        req.body.HAddress, 
+        req.body.HContactPhone, 
+        req.body.HPhone, 
+        req.body.HNumRooms,
+        req.body.HCity 
+    ]
+
+    client.query(query, VALUES, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+    })
+})
+
 //EXAMPLE OF DELETE REQUEST
 app.delete("/userHome/:id", (req, res) => {
     const itemID = req.params.id;
