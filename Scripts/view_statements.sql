@@ -3,6 +3,6 @@ SELECT OName, OEmail, OCity, OPhone
 FROM Organization;
 
 CREATE VIEW meeting_information AS
-SELECT CName, CAttendance, CStartDate, CEndDate, hotel.HName, HState, HCity, HZip, HAddress
+SELECT CName, CAttendance, CStartDate, CEndDate, conference.HName, HState, HCity, HZip, HAddress
 FROM Organization, Conference , Hotel;
 
