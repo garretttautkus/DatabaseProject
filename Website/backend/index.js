@@ -2,7 +2,6 @@ import express from "express"
 import mysql from "mysql"
 import cors from "cors"
 import Client from "pg"
-import dayjs from 'dayjs'
 const app = express()
 
 
@@ -10,7 +9,7 @@ const client = new Client.Client({
   user: 'postgres',
   host: '127.0.0.1',
   database: 'Project1',
-  password: 'password', // this is the password to get into your postgresql, not the server
+  password: 'patchwork1029!', // this is the password to get into your postgresql, not the server
   port: 5432,
 })
 client.connect(function(err) {
@@ -29,12 +28,26 @@ app.get("/", (req, res) => {
 
 //EXAMPLE OF GET REQUEST
 app.get("/userHome", (req, res) => {
-    const query = "SELECT * FROM conferences"
-    db.query(query, (err, result) => {
+    const query = "SELECT * FROM meeting_information"
+    client.query(query, (err, result) => {
         if (err) {
             console.log(err)
+            res.status(500).send("Error retrieving your conferences")
         } else {
             res.json(result)
+        }
+    })
+})
+
+app.get("/user/:oid", (req, res) => {
+    const oid = req.params.oid;
+    const query = "SELECT * FROM current_user_organization WHERE oid= $1"
+    client.query(query, [oid], (err, result) => {
+        if (err) {
+            console.log(err)
+            res.status(500).send("Error retrieving your conferences")
+        } else {
+            res.json(result.rows[0])
         }
     })
 })

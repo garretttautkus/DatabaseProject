@@ -1,7 +1,32 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Navbar from '../components/Navbar';
+import axios from 'axios';
 
 const Home = () => {
+  const [conferences, setConferences] = useState([]);
+  const [organizations, setOrganization] = useState([]);
+
+
+  useEffect(() => {
+    axios.get('/userHome')
+    .then(res => {
+      setConferences(res.data);
+    })
+    .catch(err => {
+    console.log(err);
+    });
+  }  , []);
+
+  useEffect(() => {
+    axios.get('/user/:oid')
+    .then(res => {
+      setOrganization(res.data);
+    })
+    .catch(err => {
+    console.log(err);
+    });
+  }  , []);
+
   return (
     <html lang="en">
       <div>
@@ -17,12 +42,22 @@ const Home = () => {
       </div>
       <Navbar />
       <body>
+        <section> 
+          <h1> Placeholder</h1>
+        <div>
+        {organizations.map(organization => (
+          <div id={organization.oid} className="container">
+            <h2>{organization.OName}</h2>
+          </div>
+         ))}
+        </div>
+        </section>
         <section className="header">
           <h1>My Events</h1>
           <p>Connect. Meet. Collaborate.</p>
         </section>
 
-        <section className="container">
+        {/* <section className="container">
           <h2>Uprising of the Avians</h2>
           <p2>Hotel California, Los Angeles CA 2023-02-13 to 2023-02-15</p2>
         </section>
@@ -30,7 +65,17 @@ const Home = () => {
         <section className="container">
           <h2>Global Innovation Summit</h2>
           <p2>The Blue Chateau, Tampa Bay FL 2023-06-02 to 2023-06-05</p2>
-        </section>
+        </section> */}
+      <div>
+        {conferences.map(conference => (
+          <div id={conference.cid} className="container">
+            <h2>{conference.CName}</h2>
+            <p2>{conference.HName}, {conference.HAddress},{conference.HState}, {conference.HCity}, {conference.HZip}</p2>
+            <p3>{conference.CStartDate} to {conference.CEndDate}</p3>
+          </div>
+        ))}
+        </div>
+
       </body>
     </html>
   );

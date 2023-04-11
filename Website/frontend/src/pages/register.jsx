@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from '../components/Navbar';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 //import '../style.css';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
