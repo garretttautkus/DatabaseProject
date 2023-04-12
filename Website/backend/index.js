@@ -27,14 +27,13 @@ app.get("/", (req, res) => {
 })
 
 //EXAMPLE OF GET REQUEST
-app.get("/userHome", (req, res) => {
+app.get("/allMeetings", (req, res) => { //meetings/:oid
     const query = "SELECT * FROM meeting_information"
     client.query(query, (err, result) => {
         if (err) {
             console.log(err)
-            res.status(500).send("Error retrieving your conferences")
         } else {
-            res.json(result)
+            res.json(result.rows)
         }
     })
 })
@@ -136,11 +135,12 @@ app.delete("/userHome/:id", (req, res) => {
 })
 
 //EXAMPLE OF PUT REQUEST
-app.put("/todos/update/:id", (req, res) => {
-    const itemID = req.params.id;
-    const query = "UPDATE items SET isCompleted = NOT isCompleted WHERE itemID = $1";
+app.put("/updateMeeting/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
+    const confID = req.params.cid; //make sure when we present, that we mention that our assumptions
+    const query = "UPDATE conference SET cname = $1, cstartdate = $2, cenddate = $3, ccity = $4, cfee = $5, cattendance = $6, cbudget = $7, hname = $8 WHERE cid = $9" 
+    
 
-    client.query(query, [itemID], (err, result) => {
+    client.query(query, [cid], (err, result) => {
         if (err) {
             console.log(err)
         } else {

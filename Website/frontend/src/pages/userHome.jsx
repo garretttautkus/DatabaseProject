@@ -4,80 +4,67 @@ import axios from 'axios';
 
 const Home = () => {
   const [conferences, setConferences] = useState([]);
-  const [organizations, setOrganization] = useState([]);
+  const [organizations, setOrganization] = useState([]); // creates the JSON objects. where we store the response
 
 
   useEffect(() => {
-    axios.get('/userHome')
-    .then(res => {
-      setConferences(res.data);
-    })
-    .catch(err => {
-    console.log(err);
-    });
+    const getConferences = async () => {
+      try {
+        const res = await axios.get("http://localhost:8080/allMeetings")
+        setConferences(res.data);
+      }
+      catch(err) {
+        console.error(err.message);
+      }
+    }
+    getConferences();
   }  , []);
 
   useEffect(() => {
-    axios.get('/user/:oid')
-    .then(res => {
-      setOrganization(res.data);
-    })
-    .catch(err => {
-    console.log(err);
-    });
-  }  , []);
+     // like a wrapper. use an asycn
+     const getOrganization = async () => {
+      try {
+        const res = await axios.get("http://localhost:8080/user/1")
+        setOrganization(res.data); // takes the response and places it in organization variable
+      }
+      catch(err) {
+        console.error(err.message);
+      }
+    }
+    getOrganization(); 
+  }, []);
+    
 
-  return (
-    <html lang="en">
+  return ( // return is like the body tag
+    <div>
       <div>
         <meta charSet="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="Web site created using create-react-app" />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <title>Meeting Makers</title>
         <link rel="stylesheet" href="css/style.css" />
       </div>
       <Navbar />
-      <body>
         <section> 
           <h1> Placeholder</h1>
         <div>
-        {organizations.map(organization => (
-          <div id={organization.oid} className="container">
-            <h2>{organization.OName}</h2>
+          <div id={organizations.oid} className="container">
+          <h2>{organizations.oname}</h2>
           </div>
-         ))}
         </div>
         </section>
         <section className="header">
           <h1>My Events</h1>
           <p>Connect. Meet. Collaborate.</p>
         </section>
-
-        {/* <section className="container">
-          <h2>Uprising of the Avians</h2>
-          <p2>Hotel California, Los Angeles CA 2023-02-13 to 2023-02-15</p2>
-        </section>
-
-        <section className="container">
-          <h2>Global Innovation Summit</h2>
-          <p2>The Blue Chateau, Tampa Bay FL 2023-06-02 to 2023-06-05</p2>
-        </section> */}
       <div>
-        {conferences.map(conference => (
+        {conferences.map((conference) => (
           <div id={conference.cid} className="container">
-            <h2>{conference.CName}</h2>
-            <p2>{conference.HName}, {conference.HAddress},{conference.HState}, {conference.HCity}, {conference.HZip}</p2>
-            <p3>{conference.CStartDate} to {conference.CEndDate}</p3>
+            <h2>{conference.cname}</h2>
+            <p2>{conference.hname}, {conference.haddress},{conference.hstate}, {conference.hcity}, {conference.hzip}</p2>
+            <p3>{conference.cstartdate} to {conference.cenddate}</p3>
           </div>
         ))}
         </div>
-
-      </body>
-    </html>
+      </div>
   );
 }
 export default Home; 
