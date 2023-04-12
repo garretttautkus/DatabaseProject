@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [conferences, setConferences] = useState([]);
@@ -34,6 +35,15 @@ const Home = () => {
     getOrganization(); 
   }, []);
     
+  const handleDelete = async (cid) => {
+    try {
+      await axios.delete("http://localhost:8080/delete/" + cid); //axios call to the backend
+      window.location.reload(); //reloads the page
+    }
+    catch (err) {
+      console.error(err.message); //log error
+    }
+  };
 
   return ( // return is like the body tag
     <div>
@@ -61,6 +71,8 @@ const Home = () => {
             <h2>{conference.cname}</h2>
             <p2>{conference.hname}, {conference.haddress},{conference.hstate}, {conference.hcity}, {conference.hzip}</p2>
             <p3>{conference.cstartdate} to {conference.cenddate}</p3>
+            <Link to="/updateForm"><input type="submit" value="Update Meeting" /></Link>
+            <button type="submit" onClick={()=>handleDelete(conference.cid)}>Delete Meeting</button>
           </div>
         ))}
         </div>

@@ -9,7 +9,7 @@ const client = new Client.Client({
   user: 'postgres',
   host: '127.0.0.1',
   database: 'Project1',
-  password: 'password', // this is the password to get into your postgresql, not the server
+  password: 'patchwork1029!', // this is the password to get into your postgresql, not the server
   port: 5432,
 })
 client.connect(function(err) {
@@ -121,11 +121,11 @@ app.post("/api/hotel", (req, res) => {
 })
 
 //EXAMPLE OF DELETE REQUEST
-app.delete("/userHome/:id", (req, res) => {
-    const itemID = req.params.id;
-    const query = "DELETE FROM conference WHERE itemID = $1"
+app.delete("/delete/:cid", (req, res) => {
+    const deleteID = req.params.cid;
+    const query = "DELETE FROM conference WHERE cid = ?"
 
-    client.query(query, [itemID], (err, result) => {
+    client.query(query, [deleteID], (err, result) => {
         if (err) {
             console.log(err)
         } else {
@@ -138,8 +138,6 @@ app.delete("/userHome/:id", (req, res) => {
 app.put("/updateMeeting/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
     const confID = req.params.cid; //make sure when we present, that we mention that our assumptions
     const query = "UPDATE conference SET cname = $1, cstartdate = $2, cenddate = $3, ccity = $4, cfee = $5, cattendance = $6, cbudget = $7, hname = $8 WHERE cid = $9" 
-    
-
     client.query(query, [cid], (err, result) => {
         if (err) {
             console.log(err)
