@@ -54,7 +54,6 @@ const Home = () => {
       </div>
       <Navbar />
         <section> 
-          <h1> Placeholder</h1>
         <div>
           <div id={organizations.oid} className="container">
           <h2>{organizations.oname}</h2>
