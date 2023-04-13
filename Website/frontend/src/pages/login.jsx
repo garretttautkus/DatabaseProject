@@ -12,7 +12,6 @@ const Login = () => {
           <link rel="stylesheet" href="css/style.css" />
           <div className="container">
             <form>
-              {/* Organization inputs*/}
               <label class=".formatty" htmlFor="uname">Organization Name</label>
               <input type="text" id="uname" name="uname" placeholder="Email" />
               <label htmlFor="password">Password</label>
