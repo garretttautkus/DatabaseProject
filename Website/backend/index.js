@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 
 //EXAMPLE OF GET REQUEST
 app.get("/getMeetings", (req, res) => { //meetings/:oid
-    const query = "SELECT * FROM meeting_information"
+    const query = "SELECT cid, cname, cattendance, cstartdate, cenddate, hname, hstate, hcity, hzip, haddress FROM meeting_information WHERE oid=1"
     client.query(query, (err, result) => {
         if (err) {
             console.log(err)
