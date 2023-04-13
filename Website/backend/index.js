@@ -38,6 +38,18 @@ app.get("/allMeetings", (req, res) => { //meetings/:oid
     })
 })
 
+app.get("/getConference/:cid", (req, res) => {
+    const cid = req.params.cid;
+    const query = "SELECT * FROM meeting_information WHERE cid= $1"
+    client.query(query, [cid], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+    })
+})
+
 app.get("/user/:oid", (req, res) => {
     const oid = req.params.oid;
     const query = "SELECT * FROM current_user_organization WHERE oid= $1"

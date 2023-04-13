@@ -37,8 +37,9 @@ const Home = () => {
     }
     getOrganization(); 
   }, []);
+  
   const handleClick = (cid) => {
-    navigate('/meeting')
+    navigate(`/meeting/${cid}`)
   }
   const handleDelete = async (cid) => {
     try {

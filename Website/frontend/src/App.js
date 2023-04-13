@@ -29,7 +29,7 @@ function App() {
             <Route path="/form" element={<Form/>} />
             <Route path="/todos" element={<Todos/>} />
             <Route path="/updateForm/:cid?" element={<Update/>} />
-            <Route path="/meeting" element={<Meeting/>} />
+            <Route path="/meeting/:cid?" element={<Meeting/>} />
           </Routes>
         </BrowserRouter>
       </div>
