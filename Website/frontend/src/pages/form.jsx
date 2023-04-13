@@ -14,7 +14,7 @@ const Form = () => {
     cfee : "",
     cattendance : "",
     cbudget : "",
-    hname : "Hotel California",
+    hname : "default_needs_change",
     oid: "1"
   });
   const handleSubmit = async (e) => {

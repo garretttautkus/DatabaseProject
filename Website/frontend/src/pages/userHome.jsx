@@ -54,7 +54,6 @@ const Home = () => {
       </div>
       <Navbar />
         <section> 
-          <h1> Placeholder</h1>
         <div>
           <div id={organizations.oid} className="container">
           <h2>{organizations.oname}</h2>
@@ -71,7 +70,9 @@ const Home = () => {
             <h2>{conference.cname}</h2>
             <p2>{conference.hname}, {conference.haddress},{conference.hstate}, {conference.hcity}, {conference.hzip}</p2>
             <p3>{conference.cstartdate} to {conference.cenddate}</p3>
-            <Link to="/updateForm"><input type="submit" value="Update Meeting" /></Link>
+            <Link to={`/updateForm/${conference.cid}`}>
+              <input type="submit" value="Update Meeting" />
+            </Link>
             <button type="submit" onClick={()=>handleDelete(conference.cid)}>Delete Meeting</button>
           </div>
         ))}
