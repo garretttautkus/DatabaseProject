@@ -134,18 +134,124 @@ app.delete("/delete/:cid", (req, res) => {
     })
 })
 
-//EXAMPLE OF PUT REQUEST
-app.put("/updateMeeting/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
-    const confID = req.params.cid; //make sure when we present, that we mention that our assumptions
-    const query = "UPDATE conference SET cname = $1, cstartdate = $2, cenddate = $3, ccity = $4, cfee = $5, cattendance = $6, cbudget = $7, hname = $8 WHERE cid = $9" 
-    client.query(query, [cid], (err, result) => {
+app.put("/updateName/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
+    const confID = req.params.cid;
+    const nameIn = req.body.cname;
+    const query = "UPDATE conference SET cname = $2 WHERE cid = $1";
+        
+    client.query(query, [confID, nameIn], (err, result) => {
         if (err) {
             console.log(err)
         } else {
             res.json(result)
         }
+
     })
 })
+
+app.put("/updateStart/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
+    const confID = req.params.cid;
+    const startIn = req.body.cstartdate;
+    const query = "UPDATE conference SET cstartdate = $2 WHERE cid = $1";
+        
+    client.query(query, [confID, startIn], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+
+    })
+})
+
+app.put("/updateEnd/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
+    const confID = req.params.cid;
+    const endIn = req.body.cenddate;
+    const query = "UPDATE conference SET cenddate = $2 WHERE cid = $1";
+        
+    client.query(query, [confID, endIn], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+
+    })
+})
+
+app.put("/updateCity/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
+    const confID = req.params.cid;
+    const cityIn = req.body.ccity;
+    const query = "UPDATE conference SET ccity = $2 WHERE cid = $1";
+        
+    client.query(query, [confID, cityIn], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+
+    })
+})
+
+app.put("/updateFee/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
+    const confID = req.params.cid;
+    const feeIn = req.body.cfee;
+    const query = "UPDATE conference SET cfee = $2 WHERE cid = $1";
+        
+    client.query(query, [confID, feeIn], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+
+    })
+})
+
+app.put("/updateAttendance/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
+    const confID = req.params.cid;
+    const attendanceIn = req.body.cattendance;
+    const query = "UPDATE conference SET cattendance = $2 WHERE cid = $1";
+        
+    client.query(query, [confID, attendanceIn], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+
+    })
+})
+
+app.put("/updateBudget/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
+    const confID = req.params.cid;
+    const budgetIn = req.body.cbudget;
+    const query = "UPDATE conference SET cbudget = $2 WHERE cid = $1";
+        
+    client.query(query, [confID, budgetIn], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+
+    })
+})
+
+// //EXAMPLE OF PUT REQUEST
+// app.put("/updateMeeting/:cid", (req, res) => { // make an updateFormPage. takes an input. do a listener. 
+//     const confID = req.params.cid; //make sure when we present, that we mention that our assumptions
+//     const query = "UPDATE conference SET cname = $1, cstartdate = $2, cenddate = $3, ccity = $4, cfee = $5, cattendance = $6, cbudget = $7, hname = $8 WHERE cid = $9" 
+//     client.query(query, [cid], (err, result) => {
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             res.json(result)
+//         }
+//     })
+// })
+
 
 //listen on port 8080
 app.listen(8080, () => {
