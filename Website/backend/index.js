@@ -99,6 +99,28 @@ app.post("/api/form", (req, res) => {
     })
 })
 
+app.post("/api/attendees", (req, res) => {
+    const query = "INSERT INTO attendee (aname, aphone, adiscount, aid, aemail, afeepaid, hname, cid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)"
+      const VALUES = [
+        req.body.aname,
+        req.body.aphone,
+        req.body.adiscount,
+        req.body.aid,
+        req.body.aemail,
+        req.body.afeepaid,
+        req.body.hname,
+        req.body.cid
+    ]
+
+    client.query(query, VALUES, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result)
+        }
+    })
+})
+
 app.post("/api/register", (req, res) => {
     const query = "INSERT INTO organization (oname, oaddress, ocity, ostate, ozip, oemail, ophone, oid) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)"
       const VALUES = [
