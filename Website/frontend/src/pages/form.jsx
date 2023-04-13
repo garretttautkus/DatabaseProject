@@ -41,8 +41,8 @@ const Form = () => {
       setNewForm(prev => ({...prev, [e.target.name]: 0}));
     } else {
     setNewForm(prev => ({...prev, [e.target.name]: e.target.value})); //set the state to the value of the input
-  }
-};
+    }
+  };
 
     return (
         <div>
