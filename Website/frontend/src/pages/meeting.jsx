@@ -23,23 +23,26 @@ const Meeting = () => {
           }
         }
         getMeeting();
-      }  , []);
+      });
 
 
       return (
         <div>
-          <div >
+             <meta charSet="utf-8" />
+             <link rel="stylesheet" href="css/style.css" />
+  
           <Navbar />
-            <h2 id={meeting.cid} className="container">{meeting.cname}</h2>
-            <p2>{meeting.hname}, {meeting.haddress},{meeting.hstate}, {meeting.hcity}, {meeting.hzip}</p2>
-            <p3>{meeting.cstartdate} to {meeting.cenddate}</p3>
+          <section>
+            <h id={meeting.cid} className="container">{meeting.cname}</h>
+            <p>{meeting.hname}, {meeting.haddress},{meeting.hstate}, {meeting.hcity}, {meeting.hzip}</p>
+            <p>{meeting.cstartdate} to {meeting.cenddate}</p>
+            </section>
             <br />
             <br />
             {/* <Link to={`/updateForm/${conference.cid}`}>
               <input type="submit" value="Update Meeting" />
             </Link>
             <button type="submit" onClick={()=>handleDelete(conference.cid)}>Delete Meeting</button> */}
-          </div>
         </div>
       );
     }

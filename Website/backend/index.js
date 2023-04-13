@@ -45,7 +45,7 @@ app.get("/getConference/:cid", (req, res) => {
         if (err) {
             console.log(err)
         } else {
-            res.json(result)
+            res.json(result.rows[0])
         }
     })
 })

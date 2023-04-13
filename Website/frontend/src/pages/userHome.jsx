@@ -74,8 +74,8 @@ const Home = () => {
         {conferences.map((conference) => (
           <div >
             <h2 style={{ cursor: 'pointer' }} id={conference.cid} className="container" onClick={() => handleClick(conference.cid)}>{conference.cname}</h2>
-            <p2>{conference.hname}, {conference.haddress},{conference.hstate}, {conference.hcity}, {conference.hzip}</p2>
-            <p3>{conference.cstartdate} to {conference.cenddate}</p3>
+            <p>{conference.hname}, {conference.haddress},{conference.hstate}, {conference.hcity}, {conference.hzip} </p>
+            <p>{conference.cstartdate} to {conference.cenddate} </p>
             <br />
             <br />
             <Link to={`/updateForm/${conference.cid}`}>
