@@ -3,9 +3,13 @@ import Navbar from '../components/Navbar';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
+
 
 
 const Home = () => {
+ // const { oid } = useParams();
+
   const navigate = useNavigate();
   const [conferences, setConferences] = useState([]);
   const [organizations, setOrganization] = useState([]); // creates the JSON objects. where we store the response
@@ -14,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     const getConferences = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/allMeetings")
+        const res = await axios.get(`http://localhost:8080/getMeetings`)
         setConferences(res.data);
       }
       catch(err) {
@@ -62,7 +66,9 @@ const Home = () => {
         <section> 
         <div>
           <div id={organizations.oid} className="container">
-          <h2>{organizations.oname}</h2>
+          <h>{organizations.oname}</h>
+          <br />
+          <h>{organizations.ophone}, {organizations.oemail}</h>
           </div>
         </div>
         </section>

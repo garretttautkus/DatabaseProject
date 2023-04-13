@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 })
 
 //EXAMPLE OF GET REQUEST
-app.get("/allMeetings", (req, res) => { //meetings/:oid
+app.get("/getMeetings", (req, res) => { //meetings/:oid
     const query = "SELECT * FROM meeting_information"
     client.query(query, (err, result) => {
         if (err) {
@@ -46,6 +46,18 @@ app.get("/getConference/:cid", (req, res) => {
             console.log(err)
         } else {
             res.json(result.rows[0])
+        }
+    })
+})
+
+app.get("/getAttendee/:cid", (req, res) => {
+    const cid = req.params.cid;
+    const query = "SELECT aname, aphone, aemail FROM attendee WHERE cid= $1"
+    client.query(query, [cid], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.json(result.rows)
         }
     })
 })

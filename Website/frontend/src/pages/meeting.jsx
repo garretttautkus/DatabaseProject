@@ -11,6 +11,7 @@ import { useParams } from 'react-router-dom';
 const Meeting = () => {
     const { cid } = useParams();
     const [meeting, setMeeting] = useState([]);
+    const [attendees, setAttendees] = useState([]);
 
     useEffect(() => {
         const getMeeting = async () => {
@@ -25,6 +26,19 @@ const Meeting = () => {
         getMeeting();
       });
 
+    useEffect(() => {
+        const getAttendees = async () => {
+            try {
+                const res = await axios.get(`http://localhost:8080/getAttendee/${cid}`)
+                setAttendees(res.data);
+            }
+            catch(err) {
+                console.error(err.message);
+            }
+        }
+        getAttendees();
+    })
+
 
       return (
         <div>
@@ -36,6 +50,12 @@ const Meeting = () => {
             <h id={meeting.cid} className="container">{meeting.cname}</h>
             <p>{meeting.hname}, {meeting.haddress},{meeting.hstate}, {meeting.hcity}, {meeting.hzip}</p>
             <p>{meeting.cstartdate} to {meeting.cenddate}</p>
+            </section>
+            <section> 
+                <h>Attendees</h>
+                {attendees.map((attendee) => (
+                    <div>{attendee.aname}, {attendee.aemail}, {attendee.aphone}</div>
+                ))}
             </section>
             <br />
             <br />
