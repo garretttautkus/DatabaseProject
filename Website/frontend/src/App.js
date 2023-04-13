@@ -7,6 +7,7 @@ import Form from './pages/form';
 import Hotel from './pages/hotel';
 import Register from './pages/register';
 import Update from './pages/updateForm';
+import Meeting from './pages/meeting';
 import {BrowserRouter, Routes, Route} from "react-router-dom"; //import the router to navigate pages
 import { ChakraProvider } from "@chakra-ui/react"; //import the Chakra UI library
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/form" element={<Form/>} />
             <Route path="/todos" element={<Todos/>} />
             <Route path="/updateForm/:cid?" element={<Update/>} />
+            <Route path="/meeting" element={<Meeting/>} />
           </Routes>
         </BrowserRouter>
       </div>

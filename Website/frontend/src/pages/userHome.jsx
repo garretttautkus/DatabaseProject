@@ -2,8 +2,11 @@ import React, {useState, useEffect} from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const Home = () => {
+  const navigate = useNavigate();
   const [conferences, setConferences] = useState([]);
   const [organizations, setOrganization] = useState([]); // creates the JSON objects. where we store the response
 
@@ -34,7 +37,9 @@ const Home = () => {
     }
     getOrganization(); 
   }, []);
-    
+  const handleClick = (cid) => {
+    navigate('/meeting')
+  }
   const handleDelete = async (cid) => {
     try {
       await axios.delete("http://localhost:8080/delete/" + cid); //axios call to the backend
@@ -66,10 +71,12 @@ const Home = () => {
         </section>
       <div>
         {conferences.map((conference) => (
-          <div id={conference.cid} className="container">
-            <h2>{conference.cname}</h2>
+          <div >
+            <h2 style={{ cursor: 'pointer' }} id={conference.cid} className="container" onClick={() => handleClick(conference.cid)}>{conference.cname}</h2>
             <p2>{conference.hname}, {conference.haddress},{conference.hstate}, {conference.hcity}, {conference.hzip}</p2>
             <p3>{conference.cstartdate} to {conference.cenddate}</p3>
+            <br />
+            <br />
             <Link to={`/updateForm/${conference.cid}`}>
               <input type="submit" value="Update Meeting" />
             </Link>
