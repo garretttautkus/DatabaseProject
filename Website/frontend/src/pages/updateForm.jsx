@@ -11,8 +11,7 @@ const Update = () => {
     cname : ""
   });
 
-  const handleUpdate = async (cid) => {
-    
+  const handleSubmit = async (cid) => {
     try {
       await axios.put(`http://localhost:8080/updateName/${cid}`, newForm);
         setNewForm({ 
@@ -90,9 +89,9 @@ const Update = () => {
   };
   const handleChange = (e) => {
     if (e.target.name === 'budget' && e.target.value === '') {
-      setUpdateForm(prev => ({...prev, [e.target.name]: 0}));
+      setNewForm(prev => ({...prev, [e.target.name]: 0}));
     } else {
-    setUpdateForm(prev => ({...prev, [e.target.name]: e.target.value})); //set the state to the value of the input
+    setNewForm(prev => ({...prev, [e.target.name]: e.target.value})); //set the state to the value of the input
   }
 };
 
