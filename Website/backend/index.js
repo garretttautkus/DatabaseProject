@@ -124,7 +124,6 @@ app.post("/api/hotel", (req, res) => {
 app.delete("/delete/:cid", (req, res) => {
     const deleteID = req.params.cid;
     const query = "DELETE FROM conference WHERE cid = $1"
-
     client.query(query, [deleteID], (err, result) => {
         if (err) {
             console.log(err)

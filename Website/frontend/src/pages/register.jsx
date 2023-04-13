@@ -17,7 +17,7 @@ const Register = () => {
         ozip : "",
         oemail : "",
         ophone : "",
-        oid : ""
+        oid : "5"
     });
 
     const handleSubmit = async (e) => {
@@ -32,7 +32,7 @@ const Register = () => {
                 ozip : "",
                 oemail : "",
                 ophone : "",
-                oid : ""
+                oid : "5"
             });
         navigate('/userHome');
         } catch(err) {
