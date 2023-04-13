@@ -17,7 +17,7 @@ const Register = () => {
         ozip : "",
         oemail : "",
         ophone : "",
-        oid : "10"
+        oid : "5"
     });
 
     const handleSubmit = async (e) => {
@@ -32,7 +32,7 @@ const Register = () => {
                 ozip : "",
                 oemail : "",
                 ophone : "",
-                oid : "10"
+                oid : "5"
             });
         navigate('/userHome');
         } catch(err) {
@@ -46,14 +46,7 @@ const Register = () => {
 
       return (
         <div>
-          <meta charSet="utf-8" />
-          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#000000" />
-          <meta name="description" content="Web site created using create-react-app" />
-          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-        
+          <meta charSet="utf-8" />        
           <title>Welcome to Meeting Makers!</title>
           <Navbar />
 

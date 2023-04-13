@@ -1,6 +1,5 @@
 import './App.css';
 import Todos from './pages/Todos'; //import any pages you have (this is my home page)
-//import Surprise from './pages/hotel'; //import any pages you have
 import Login from './pages/login';
 import Home from './pages/userHome';
 import Form from './pages/form';
