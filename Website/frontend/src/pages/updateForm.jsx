@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 const Update = () => {
-  const [newForm, setNewForm] = useState({
+  const [updateForm, setUpdateForm] = useState({
     cname : "",
     cstartdate : "",
     cenddate : "",
@@ -18,11 +18,11 @@ const Update = () => {
     oid: "1"
   });
 
-  const handleSubmit = async (e) => {
+  const handleUpdate = async (cid) => {
     
     try {
-        await axios.put("http://localhost:8080//updateMeeting/:cid", newForm); //this is the backend endpoint
-        setNewForm({ 
+        await axios.put("http://localhost:8080//updateMeeting/" + cid, updateForm); //this is the backend endpoint
+        setUpdateForm({ 
           cname : "",
           cstartdate : "",
           cenddate : "",
@@ -39,9 +39,9 @@ const Update = () => {
   };
   const handleChange = (e) => {
     if (e.target.name === 'budget' && e.target.value === '') {
-      setNewForm(prev => ({...prev, [e.target.name]: 0}));
+      setUpdateForm(prev => ({...prev, [e.target.name]: 0}));
     } else {
-    setNewForm(prev => ({...prev, [e.target.name]: e.target.value})); //set the state to the value of the input
+    setUpdateForm(prev => ({...prev, [e.target.name]: e.target.value})); //set the state to the value of the input
   }
 };
 
@@ -52,24 +52,24 @@ const Update = () => {
             <Navbar />
             <link rel="stylesheet" href="css/style.css" />
             <div className="container">
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="cname">Conference Name</label>
-                <input type="text" id="cname" name="cname" placeholder="Conference name" onChange={handleChange} />
-                <label htmlFor="cstart">Conference Start Date</label>
+            <form id = "cid" onSubmit={()=>handleUpdate(updateForm.cid)}>
+                <label htmlFor="cname">New Conference Name</label>
+                <input type="text" id="cname" name="cname" placeholder="Conference Name" onChange={handleChange} />
+                <label htmlFor="cstart">New Conference Start Date</label>
                 <input type="date" id="cstartdate" name="cstartdate" placeholder="Start Date" format="yyyy-mm-dd" onChange={handleChange} />
                 <br />
                 <br />
-                <label htmlFor="cend">Conference End Date</label>
+                <label htmlFor="cend">New Conference End Date</label>
                 <input type="date" id="cenddate" name="cenddate" placeholder="End Date" format="yyyy-mm-dd" onChange={handleChange} />
                 <br />
                 <br />
-                <label htmlFor="ccity">Conference EARTH</label>
+                <label htmlFor="ccity">New Conference City</label>
                 <input type="text" id="ccity" name="ccity" placeholder="Conference City" onChange={handleChange} />
-                <label htmlFor="cfee">Fee</label>
+                <label htmlFor="cfee">New Fee</label>
                 <input type="text" id="cfee" name="cfee" placeholder="Conference Attendance Fee" onChange={handleChange} />
-                <label htmlFor="cattendance">Conference Attendance</label>
+                <label htmlFor="cattendance">New Conference Attendance</label>
                 <input type="text" id="cattendance" name="cattendance" placeholder="Estimated Conference Attendance" onChange={handleChange} />
-                <label htmlFor="budget">Proposed Budget</label>
+                <label htmlFor="budget">New Proposed Budget</label>
                 <input type="number" id="cbudget" name="cbudget" placeholder="Proposed Budget" step="0.01" onChange={handleChange} />
                 <input type="submit" value="Submit" />
             </form>

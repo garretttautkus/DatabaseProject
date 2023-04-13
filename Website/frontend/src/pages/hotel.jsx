@@ -40,47 +40,11 @@ const Hotel = () => {
     return (
         <div>
             <meta charSet="utf-8" />
-            <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="theme-color" content="#000000" />
-            <meta name="description" content="Web site created using create-react-app" />
-            <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-        {/*
-                manifest.json provides metadata used when your web app is installed on a
-                user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-              */}
-            <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-                  {/*
-                Notice the use of %PUBLIC_URL% in the tags above.
-                It will be replaced with the URL of the `public` folder during the build.
-                Only files inside the `public` folder can be referenced from the HTML.
-          
-                Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-                work correctly both with client-side routing and a non-root public URL.
-                Learn how to configure a non-root public URL by running `npm run build`.
-              */}
             <title>Meeting Makers</title>
             <Navbar />
-
             <link rel="stylesheet" href="css/style.css" />
             <div className="container">
             <form onSubmit={handleSubmit}>
-                      {/* Organization inputs*/}
-                {/* <label htmlFor="oname">Company Name</label>
-                <input type="text" id="oname" name="oname" placeholder="Company name" onChange={handleChange} />
-                <label htmlFor="oaddress">Company Address</label>
-                <input type="text" id="oaddress" name="oaddress" placeholder="Company street address" onChange={handleChange} />
-                <label htmlFor="ocity">City</label>
-                <input type="text" id="ocity" name="ocity" placeholder="City" onChange={handleChange} />
-                <label htmlFor="ostate">State</label>
-                <input type="text" id="ostate" name="ostate" placeholder="State" onChange={handleChange} />
-                <label htmlFor="ozip">Zipcode</label>
-                <input type="text" id="ozip" name="ozip" placeholder="Zipcode" onChange={handleChange} />
-                <label htmlFor="oemail">Email</label>
-                <input type="text" id="oemail" name="oemail" placeholder="Contact Email" onChange={handleChange} />
-                <label htmlFor="ophone">Phone</label>
-                <input type="text" id="ophone" name="ophone" placeholder="Contact Phone number" onChange={handleChange} /> */}
-                      {/* Conference inputs*/}
                 <label htmlFor="HName">Hotel Name</label>
                 <input type="text" id="HName" name="HName" placeholder="Hotel name" onChange={handleChange} />
                 <label htmlFor="HMaxMeetSize">Hotel Max Meeting Size</label>
@@ -103,10 +67,6 @@ const Hotel = () => {
                 <input type="text" id="HPhone" name="HPhone" placeholder="Hotel Phone" onChange={handleChange} />
                 <label htmlFor="HContactPhone">Hotel Representative Contact Phone</label>
                 <input type="text" id="HContactPhone" name="HContactPhone" placeholder="Hotel Contact Phone" onChange={handleChange} />
-                      {/* Not sure how to do attendees - do we need to? */}
-                      {/* Didn't include hotel - do we need to? */}
-                {/* <label htmlFor="subject">Extra Info</label>
-                <textarea id="subject" name="subject" placeholder="Anything else we need to know.." style={{height: '200px'}} defaultValue={""} /> */}
                 <button type="submit">Submit</button>
             </form>
           </div>
