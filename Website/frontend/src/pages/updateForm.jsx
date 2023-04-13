@@ -11,7 +11,8 @@ const Update = () => {
     cname : ""
   });
 
-  const handleSubmit = async (cid) => {
+  const handleSubmit = async (e) => {
+    
     try {
       await axios.put(`http://localhost:8080/updateName/${cid}`, newForm);
         setNewForm({ 
@@ -37,7 +38,7 @@ const Update = () => {
     try {
       await axios.put(`http://localhost:8080/updateEnd/${cid}`, newForm);
         setNewForm({ 
-          cstartdate : ""
+          cenddate : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -48,7 +49,7 @@ const Update = () => {
     try {
       await axios.put(`http://localhost:8080/updateCity/${cid}`, newForm);
         setNewForm({ 
-          cstartdate : ""
+          ccity : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -59,7 +60,7 @@ const Update = () => {
     try {
       await axios.put(`http://localhost:8080/updateFee/${cid}`, newForm);
         setNewForm({ 
-          cstartdate : ""
+          cfee : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -70,7 +71,7 @@ const Update = () => {
     try {
       await axios.put(`http://localhost:8080/updateAttendance/${cid}`, newForm);
         setNewForm({ 
-          cstartdate : ""
+          cattendance : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
@@ -81,7 +82,7 @@ const Update = () => {
     try {
       await axios.put(`http://localhost:8080/updateBudget/${cid}`, newForm);
         setNewForm({ 
-          cstartdate : ""
+          cbudget : ""
          }); // reset the form
     } catch(err) {
         console.error(err.message); //console log the error
